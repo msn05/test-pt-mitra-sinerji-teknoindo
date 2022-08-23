@@ -15,7 +15,8 @@ class CreateDbDataTestTableTSalesDet extends Migration
     {
         Schema::connection('dbtest')->create('t_sales_det', function (Blueprint $table) {
             $table->foreignId('sale_id')->references('id')->on('t_sales')->onDelete('cascade')->comment('Relasi tabel Penjulan');
-            $table->foreignId('product_id')->references('id')->on('barangs')->onDelete('restrict')->comment('Relasi banyak barang di tabel barang');;
+            $table->foreignId('product_id')->references('id')->on('barangs')->onDelete('restrict')->comment('Relasi banyak barang di tabel barang');
+            $table->primary(['sale_id', 'product_id']);
             $table->integer('qty')->default(9)->comment('Jumlah Barang');
             $table->decimal('discount_pcs')->default(0)->comment('Diskon per barang');
             $table->decimal('grand_total')->default(0)->comment('Total Harga');
