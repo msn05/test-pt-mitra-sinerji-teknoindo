@@ -13,7 +13,8 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql')->create('users', function ($table) {
+        // Schema::connection('mysql')
+        Schema::create('users', function ($table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();

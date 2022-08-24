@@ -13,7 +13,7 @@ class CreateDbDataTestTableCutomers extends Migration
      */
     public function up()
     {
-        Schema::connection('dbtest')->create('m_customers', function (Blueprint $table) {
+        Schema::create('m_customers', function (Blueprint $table) {
             $table->id();
             $table->char('code', 10)->unique()->comment('Kode Pelanggan');
             $table->string('name')->comment('Nama Pelanggan');

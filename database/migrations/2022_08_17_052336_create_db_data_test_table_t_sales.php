@@ -13,7 +13,7 @@ class CreateDbDataTestTableTSales extends Migration
      */
     public function up()
     {
-        Schema::connection('dbtest')->create('t_sales', function (Blueprint $table) {
+        Schema::create('t_sales', function (Blueprint $table) {
             $table->id();
             $table->char('code')->unique()->comment('Kode Penjualan');
             $table->date('date_of_sale')->comment('Tanggal Penjualan');

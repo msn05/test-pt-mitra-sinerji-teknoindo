@@ -13,7 +13,7 @@ class CreateDbDataTableMBarangs extends Migration
    */
   public function up()
   {
-    Schema::connection('dbtest')->create('barangs', function (Blueprint $table) {
+    Schema::create('barangs', function (Blueprint $table) {
       $table->id();
       $table->char('code', 10)->unique()->comment('Kode Barang');
       $table->string('name', 100)->comment('Nama Barang');
