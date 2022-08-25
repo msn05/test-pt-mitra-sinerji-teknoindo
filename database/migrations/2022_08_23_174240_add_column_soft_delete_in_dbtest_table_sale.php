@@ -14,7 +14,7 @@ class AddColumnSoftDeleteInDbtestTableSale extends Migration
     public function up()
     {
 
-        Schema::connection('dbtest')->table('t_sales', function (Blueprint $table) {
+        Schema::table('t_sales', function (Blueprint $table) {
             $table->softDeletes();
             $table->mediumText('reason')->nullable()->after('status');
         });
@@ -27,7 +27,7 @@ class AddColumnSoftDeleteInDbtestTableSale extends Migration
      */
     public function down()
     {
-        Schema::connection('dbtest')->table('t_sales', function (Blueprint $table) {
+        Schema::table('t_sales', function (Blueprint $table) {
             $table->dropColumn('deleted_at');
             $table->dropColumn('reason');
         });
