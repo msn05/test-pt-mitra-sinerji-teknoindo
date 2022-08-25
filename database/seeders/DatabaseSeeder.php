@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        return \App\Models\User::create([
+        \App\Models\User::create([
             'name' => 'muhammad satrion',
             'email' => 'test@gmail.com',
             'email_verified_at' => '2022-08-22 17:00:00',
